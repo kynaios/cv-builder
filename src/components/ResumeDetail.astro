@@ -1,0 +1,23 @@
+---
+const { title, subtitle, description, link } = Astro.props;
+---
+
+<div class="resume-detail-container">
+	<h3>{title}</h3>
+	{link ? <a href={subtitle}>{subtitle}</a> : <h4>{subtitle}</h4>}
+	{description ? <p>{description}</p> : ""}
+</div>
+
+<style lang="scss">
+@import '../styles/variables.scss';
+	.resume-detail-container {
+		& > p::before {
+			content: "\2022";
+			margin-right: $g-md;
+		}
+
+		& > a {
+			font-weight: 500;
+		}
+	}
+</style>

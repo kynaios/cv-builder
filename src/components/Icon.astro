@@ -1,0 +1,25 @@
+---
+import { Image } from "astro:assets";
+
+const { icon, title } = Astro.props;
+---
+
+<div class="icon-container">
+	<Image src={icon} alt={`${title}-icon`} />
+	<span>{title}</span>
+</div>
+
+<style lang="scss">
+	@import '../styles/variables.scss';
+	.icon-container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: $g-md;
+
+		& > span {
+			font-size: $fs-s;
+		}
+	}
+</style>
