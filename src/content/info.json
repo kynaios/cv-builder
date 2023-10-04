@@ -1,0 +1,57 @@
+{
+  "name": "John Doe",
+  "jobTitle": "Job Title",
+  "contact": {
+    "number": "01234567890",
+    "email": "mail@example.com",
+    "github": "https://github.com/github",
+    "linkedin": "https://linkedin.com/in/linkedin-link"
+  },
+  "aboutMe": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet numquam velit delectus fugiat! Pariatur ab natus aliquid fugiat sequi quam earum sed iste. Dolore commodi tempore quo fugiat optio suscipit.",
+  "languages": [
+    {
+      "language": "Language 1",
+      "level": "Level"
+    },
+    {
+      "language": "Language 2",
+      "level": "Level"
+    }
+  ],
+  "experience": [
+    {
+      "title": "Experience 1",
+      "subtitle": "Experience subtitle 1",
+      "description": "Experience description"
+    },
+    {
+      "title": "Experience 2",
+      "subtitle": "Experience subtitle 2",
+      "description": "Experience description"
+    }
+  ],
+  "projects": [
+    {
+      "title": "Project 1",
+      "subtitle": "Project subtitle 1",
+      "description": "Project description"
+    },
+    {
+      "title": "Project 2",
+      "subtitle": "Project subtitle 2",
+      "description": "Project description"
+    }
+  ],
+  "education": [
+    {
+      "title": "Education 1",
+      "subtitle": "Education subtitle 1",
+      "description": "Education description"
+    },
+    {
+      "title": "Education 2",
+      "subtitle": "Education subtitle 2",
+      "description": "Education description"
+    }
+  ]
+}

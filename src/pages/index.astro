@@ -1,5 +1,6 @@
 ---
 import "../styles/main.scss";
+import info from "../content/info.json";
 import Icon from "../components/Icon.astro";
 import ResumeDetail from "../components/ResumeDetail.astro";
 import astro from "../icons/astro.svg";
@@ -31,29 +32,26 @@ import svelte from "../icons/svelte.svg";
 		<div class="cv-page">
 			<header class="heading">
 				<div class="name-title-container">
-					<h1>John Doe</h1>
-					<h2>Job Position</h2>
+					<h1>{info.name}</h1>
+					<h2>{info.jobTitle}</h2>
 				</div>
 			</header>
 			<aside class="short-info">
 				<div class="contact-container">
 					<h2>Contact</h2>
-					<a href="tel:+1234567890">Number: 01234567890</a>
-					<a href="mailto:mail@example.com">Email: mail@example.com</a>
-					<a href="https://github.com/github"
-						>Github: https://github.com/github</a
+					<a href={`tel:${info.contact.number}`}
+						>Number: {info.contact.number}</a
 					>
-					<a href="https://linkedin.com/in/linkedin-link"
-						>Linkedin: https://linkedin.com/in/linkedin-link</a
+					<a href={`mailto:${info.contact.email}`}
+						>Email: {info.contact.email}</a
 					>
+					<a href={info.contact.github}>Github: {info.contact.github}</a>
+					<a href={info.contact.linkedin}>Linkedin: {info.contact.linkedin}</a>
 				</div>
 				<div class="about-me-container">
 					<h2>About me</h2>
 					<p>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet
-						numquam velit delectus fugiat! Pariatur ab natus aliquid fugiat
-						sequi quam earum sed iste. Dolore commodi tempore quo fugiat optio
-						suscipit.
+						{info.aboutMe}
 					</p>
 				</div>
 				<div class="skills-container">
@@ -74,49 +72,59 @@ import svelte from "../icons/svelte.svg";
 				</div>
 				<div class="language-container">
 					<h2>Languages</h2>
-					<p>Language 1: Level</p>
-					<p>Language 2: Level</p>
+					{
+						info.languages.map((l) => {
+							return (
+								<p>
+									{l.language}: {l.level}
+								</p>
+							);
+						})
+					}
 				</div>
 			</aside>
 			<article class="details">
 				<section class="experience">
 					<h2 class="title">Experience</h2>
-					<ResumeDetail
-						title="Experience 1"
-						subtitle="Experience Subtitle"
-						description="Experience Description"
-					/>
-					<ResumeDetail
-						title="Experience 2"
-						subtitle="Experience Subtitle"
-						description="Experience Description"
-					/>
+					{
+						info.experience.map((e) => {
+							return (
+								<ResumeDetail
+									title={e.title}
+									subtitle={e.subtitle}
+									description={e.description}
+								/>
+							);
+						})
+					}
 				</section>
 				<section class="projects">
 					<h2 class="title">Projects</h2>
-					<ResumeDetail
-						title="Project 1"
-						subtitle="Project Subtitle"
-						description="Project Description"
-					/>
-					<ResumeDetail
-						title="Project 2"
-						subtitle="Project Subtitle"
-						description="Project Description"
-					/>
+					{
+						info.projects.map((p) => {
+							return (
+								<ResumeDetail
+									title={p.title}
+									subtitle={p.subtitle}
+									description={p.description}
+								/>
+							);
+						})
+					}
 				</section>
 				<section class="education">
 					<h2 class="title">Education</h2>
-					<ResumeDetail
-						title="Education 1"
-						subtitle="Education Subtitle"
-						description="Education Description"
-					/>
-					<ResumeDetail
-						title="Education 2"
-						subtitle="Education Subtitle"
-						description="Education Description"
-					/>
+					{
+						info.education.map((e) => {
+							return (
+								<ResumeDetail
+									title={e.title}
+									subtitle={e.subtitle}
+									description={e.description}
+								/>
+							);
+						})
+					}
 				</section>
 			</article>
 
