@@ -58,6 +58,20 @@ import "../styles/main.scss";
 		& > .heading {
 			grid-area: heading;
 			background-color: $secondary;
+
+			& > .name-title-container {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				flex-direction: column;
+				gap: $g-md;
+				padding: $g-l;
+
+				& > h1,
+				h2 {
+					color: $accent;
+				}
+			}
 		}
 
 		& > .short-info {
