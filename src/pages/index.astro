@@ -1,12 +1,14 @@
 ---
-
+import "../styles/main.scss";
 ---
 
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="stylesheet" href="main.scss" />
+		<link
+			href="https://api.fonts.coollabs.io/css2?family=Manrope:wght@400;500&display=swap"
+			rel="stylesheet"
 		/>
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
@@ -39,6 +41,7 @@
 </html>
 
 <style lang="scss">
+	@import "../styles/variables.scss";
 	.cv-page {
 		width: 210mm;
 		height: 297mm;
@@ -49,12 +52,12 @@
 			"footer footer";
 		grid-template-rows: 135px 1fr;
 		grid-template-columns: 300px 1fr;
-		column-gap: 1rem;
-		background-color: #ecebe9;
+		column-gap: $g-l;
+		background-color: $primary;
 
 		& > .heading {
 			grid-area: heading;
-			background-color: #393e41;
+			background-color: $secondary;
 		}
 
 		& > .short-info {
