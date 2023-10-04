@@ -22,7 +22,46 @@ import "../styles/main.scss";
 					<h2>Job Position</h2>
 				</div>
 			</header>
-			<aside class="short-info">Short details</aside>
+			<aside class="short-info">
+				<div class="contact-container">
+					<h2>Contact</h2>
+					<a href="tel:+1234567890">Number: 01234567890</a>
+					<a href="mailto:mail@example.com">Email: mail@example.com</a>
+					<a href="https://github.com/github"
+						>Github: https://github.com/github</a
+					>
+					<a href="https://linkedin.com/in/linkedin-link"
+						>Linkedin: https://linkedin.com/in/linkedin-link</a
+					>
+				</div>
+				<div class="about-me-container">
+					<h2>About me</h2>
+					<p>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet
+						numquam velit delectus fugiat! Pariatur ab natus aliquid fugiat
+						sequi quam earum sed iste. Dolore commodi tempore quo fugiat optio
+						suscipit.
+					</p>
+				</div>
+				<div class="skills-container">
+					<h2>Skills</h2>
+					<div class="skill-icons">
+						<span>Skill</span>
+						<span>Skill</span>
+						<span>Skill</span>
+						<span>Skill</span>
+						<span>Skill</span>
+						<span>Skill</span>
+						<span>Skill</span>
+						<span>Skill</span>
+					</div>
+				</div>
+				<div class="language-container">
+					<h2>Languages</h2>
+					<p>Language 1: Level</p>
+					<p>Language 2: Level</p>
+				</div>
+			</aside>
 			<article class="details">Details</article>
 			<footer class="agreement">
 				<p>
@@ -76,6 +115,28 @@ import "../styles/main.scss";
 
 		& > .short-info {
 			grid-area: short-info;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-around;
+			padding: $g-l;
+
+			& h2,
+			p,
+			a {
+				text-align: center;
+			}
+
+			& > .contact-container {
+				display: flex;
+				flex-direction: column;
+			}
+
+			& .skill-icons {
+				display: grid;
+				grid-template-columns: repeat(4, 1fr);
+				row-gap: $g-md;
+				column-gap: $g-md;
+			}
 		}
 
 		& > .details {
