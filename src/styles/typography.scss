@@ -1,0 +1,34 @@
+@import "./variables.scss";
+
+h1,
+h2,
+h3,
+h4,
+p,
+a {
+  margin: $g-xs;
+  font-family: "Manrope", sans-serif;
+  color: $secondary;
+}
+
+h1 {
+  font-size: $fs-xl;
+}
+
+h2 {
+  font-size: $fs-l;
+}
+
+h3,
+h4 {
+  font-size: $fs-md;
+}
+
+p,
+a {
+  font-size: $fs-s;
+}
+
+a {
+  text-decoration: none;
+}
